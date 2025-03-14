@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="NotificationService" />
+        <module name="ServiceRegistry" />
+        <module name="OrderService" />
+        <module name="Base-Domains" />
+        <module name="Gateway" />
+      </profile>
+      <profile name="Annotation profile for UserService" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="UserService" />
+        <module name="ProductService" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Base-Domains" target="17" />
+      <module name="CartService" target="17" />
+      <module name="Gateway" target="17" />
+      <module name="NotificationService" target="17" />
+      <module name="OrderService" target="17" />
+      <module name="PaymentService" target="17" />
+      <module name="ProductService" target="17" />
+      <module name="ServiceRegistry" target="17" />
+      <module name="UserService" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Base-Domains" options="-parameters" />
+      <module name="CartService" options="-parameters" />
+      <module name="Gateway" options="-parameters" />
+      <module name="NotificationService" options="-parameters" />
+      <module name="OrderService" options="-parameters" />
+      <module name="PaymentService" options="-parameters" />
+      <module name="ProductService" options="-parameters" />
+      <module name="ServiceRegistry" options="-parameters" />
+      <module name="UserService" options="-parameters" />
+    </option>
+  </component>
+</project>
