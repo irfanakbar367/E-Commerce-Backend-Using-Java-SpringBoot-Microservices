@@ -1,8 +1,7 @@
 package com.example.UserService.controllers;
 
 import com.example.UserService.SecurityConfig.MyUserDetailsService;
-import com.example.UserService.dtos.UserDTO;
-import com.example.UserService.models.Users;
+import com.example.UserService.entities.Users;
 import com.example.UserService.repositories.UserRepo;
 import com.example.UserService.services.JwtService;
 import com.example.UserService.services.UserService;

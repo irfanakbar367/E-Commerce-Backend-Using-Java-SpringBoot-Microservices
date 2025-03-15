@@ -1,6 +1,6 @@
 package com.example.UserService.SecurityConfig;
 
-import com.example.UserService.models.Users;
+import com.example.UserService.entities.Users;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

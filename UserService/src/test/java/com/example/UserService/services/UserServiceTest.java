@@ -1,7 +1,7 @@
 package com.example.UserService.services;
 
 import com.example.UserService.dtos.UserDTO;
-import com.example.UserService.models.Users;
+import com.example.UserService.entities.Users;
 import com.example.UserService.repositories.UserRepo;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;

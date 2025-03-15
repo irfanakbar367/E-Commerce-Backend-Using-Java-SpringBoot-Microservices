@@ -1,7 +1,6 @@
 package com.example.UserService.repositories;
 
-import com.example.UserService.models.Users;
-import org.apache.catalina.User;
+import com.example.UserService.entities.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

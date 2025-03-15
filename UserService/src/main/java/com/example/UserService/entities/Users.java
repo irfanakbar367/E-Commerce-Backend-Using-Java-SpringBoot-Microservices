@@ -1,8 +1,9 @@
-package com.example.UserService.models;
+package com.example.UserService.entities;
 
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "USERS")
 public class Users {
     public int getId() {
         return id;

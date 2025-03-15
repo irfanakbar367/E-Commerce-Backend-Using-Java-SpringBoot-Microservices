@@ -1,26 +1,21 @@
 package com.example.UserService.controllers;
 
 import com.example.UserService.SecurityConfig.MyUserDetailsService;
-import com.example.UserService.SecurityConfig.SecurityConfig;
 import com.example.UserService.dtos.UserDTO;
-import com.example.UserService.models.Users;
+import com.example.UserService.entities.Users;
 import com.example.UserService.repositories.UserRepo;
 import com.example.UserService.services.JwtService;
 import com.example.UserService.services.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
