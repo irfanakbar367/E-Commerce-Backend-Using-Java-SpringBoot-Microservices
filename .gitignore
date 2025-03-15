@@ -1,0 +1,43 @@
+# Ignore target directory (compiled files)
+target/
+
+# Ignore IntelliJ IDEA project files
+*.iml
+.idea/
+*.ipr
+*.iws
+
+# Ignore Eclipse project files
+.classpath
+.project
+.settings/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore Maven wrapper binary files
+mvnw
+mvnw.cmd
+
+# Ignore logs and temporary files
+logs/
+*.log
+hs_err_pid*
+
+# Ignore build artifacts
+*.jar
+*.war
+*.ear
+
+# Ignore environment configuration files
+.env
+application.properties
+application.yml
+
+# Ignore Docker build files (optional)
+*.dockerignore
+docker-compose.override.yml
+
+# Ignore test reports
+surefire-reports/
