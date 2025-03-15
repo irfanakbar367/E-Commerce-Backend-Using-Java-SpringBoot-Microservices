@@ -14,10 +14,12 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class UserServiceTest {
@@ -26,6 +28,8 @@ class UserServiceTest {
     private UserRepo userRepo;
 
     private AuthenticationManager authenticationManager;
+    @Mock
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
     private Users user;
     @InjectMocks
     private UserService userService;
@@ -36,11 +40,12 @@ class UserServiceTest {
         user.setId(1);
         user.setUsername("testUser");
         user.setRole("USER");
+        user.setPassword("plainPassword");
     }
 
     @Test
     void getUserById() {
-        Mockito.when(userRepo.findById(1)).thenReturn(Optional.ofNullable(user));
+        when(userRepo.findById(1)).thenReturn(Optional.ofNullable(user));
         ResponseEntity<UserDTO> response = userService.getUserById(1);
 
         assertEquals(200, response.getStatusCode().value());
@@ -52,6 +57,15 @@ class UserServiceTest {
 
     @Test
     void addUser() {
+        when(bCryptPasswordEncoder.encode(anyString())).thenReturn("hashedPassword");
+        when(userRepo.save(user)).thenReturn(user);
+
+        String result = userService.addUser(user);
+
+        assertEquals("User Saved", result);
+        assertEquals("hashedPassword", user.getPassword());
+
+        verify(userRepo, times(1)).save(user);
     }
 
     @Test
