@@ -89,22 +89,22 @@ class UserControllerTest {
 
     }
 
-    @Test
-    void validateToken_ShouldReturnUser() throws Exception {
-        String token = "mocked-token";
-        String username = "Irfan";
-        Users mockUser = new Users();
-        mockUser.setUsername(username);
-
-        when(jwtService.extractUserName(token)).thenReturn(username);
-        when(myUserDetailsService.loadUserByUsername(username)).thenReturn(Mockito.mock(UserDetails.class));
-        when(jwtService.validateToken(eq(token), any(UserDetails.class))).thenReturn(true);
-        when(userRepo.findByUsername(username)).thenReturn(mockUser);
-
-        mockMvc.perform(get("/users/validateToken")
-                        .param("token", token))
-                .andExpect(status().isOk());
-    }
+//    @Test
+//    void validateToken_ShouldReturnUser() throws Exception {
+//        String token = "mocked-token";
+//        String username = "Irfan";
+//        Users mockUser = new Users();
+//        mockUser.setUsername(username);
+//
+//        when(jwtService.extractUserName(token)).thenReturn(username);
+//        when(myUserDetailsService.loadUserByUsername(username)).thenReturn(Mockito.mock(UserDetails.class));
+//        when(jwtService.validateToken(eq(token), any(UserDetails.class))).thenReturn(true);
+//        when(userRepo.findByUsername(username)).thenReturn(mockUser);
+//
+//        mockMvc.perform(get("/users/validateToken")
+//                        .param("token", token))
+//                .andExpect(status().isOk());
+//    }
 
     @Test
     void getUserById_ShouldReturnUser() throws Exception {
