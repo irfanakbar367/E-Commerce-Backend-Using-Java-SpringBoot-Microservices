@@ -70,7 +70,7 @@ class AdminControllerTest {
     @Test
     void addProduct_ShouldReturnForbidden_WhenUserRoleIsNotAdmin() throws Exception {
         when(adminService.addProduct(any(Product.class), eq("USER")))
-                .thenReturn((ResponseEntity) ResponseEntity.status(403).body("null"));
+                .thenReturn((ResponseEntity) ResponseEntity.status(403).body("Access Denied: Only ADMIN can add products."));
 
         mockMvc.perform(post("/products/addProduct")
                         .header("X-User-Role", "USER")
@@ -85,7 +85,7 @@ class AdminControllerTest {
     void addProduct_ShouldReturnNotImplemented_WhenServiceThrowsException() throws Exception {
 
         when(adminService.addProduct(any(Product.class), eq("ADMIN")))
-                .thenReturn(ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).body(null));
+                .thenReturn((ResponseEntity) ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).body("Product is not saved. Please try again"));
 
         mockMvc.perform(post("/products/addProduct")
                         .header("X-User-Role", "ADMIN")
