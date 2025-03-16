@@ -19,7 +19,7 @@ public class CustomerService {
         this.productRepo = productRepo;
     }
 
-    public ResponseEntity<?> getProductUserByName(String productName, String userRole) {
+    public ResponseEntity<?> getProductByNameAndUserRole(String productName, String userRole) {
         if (!"USER".equals(userRole)) {
             return ResponseEntity.status(403).body("Access Denied: Only Customer can see products.");
         }

@@ -20,10 +20,10 @@ public class CustomerController {
     }
 
     @GetMapping("/getProductByName")
-    public ResponseEntity<?> getProductUserByName(@RequestParam String productName){
+    public ResponseEntity<?> getProductByNameAndUserRole(@RequestParam String productName){
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         String userRole = request.getHeader("X-User-Role");
-        return customerService.getProductUserByName(productName, userRole);
+        return customerService.getProductByNameAndUserRole(productName, userRole);
     }
     @GetMapping("/getAllProducts")
     public ResponseEntity<?> getAllProducts(){
