@@ -27,6 +27,7 @@ public class AdminService {
             return ResponseEntity.ok(productRepo.save(product));
         }
         catch (Exception e) {
+            System.out.println("Exception : " + e.getMessage());
             return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).body("Product is not saved. Please try again");
         }
     }
